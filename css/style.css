@@ -1,0 +1,217 @@
+:root {
+    --font: 'Lexend', sans-serif;
+    --pink:#ff79c6;
+    --hover:#ffc6ff;
+    --white: #ffffff;
+    --purple: #9772FB;
+}
+
+html
+{
+    background-color: black;
+}
+
+body{
+    margin:0px;
+    font-family: 'Lexend', sans-serif;
+    color:var(--white);
+    scroll-behavior: smooth;
+    background:linear-gradient(0deg,rgba(0,0,0),rgba(0,0,0,0)),url("../img/bg.svg") center center fixed;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    --c: var(--pink);
+    color: var(--c);
+    letter-spacing: 0.1em;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s;
+    display: block;
+    padding: 25px;
+    margin-right: 55px;
+    margin-left: 55px;
+    margin-bottom: 30px;
+    font-family: var(--font);
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 13px;
+    border: solid var(--pink) 3px;
+    text-align: center;
+    text-decoration: none;
+}
+
+nav ul li span {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: var(--c);
+    transform: translateY(150%);
+    border-radius: 50%;
+    left: calc((var(--n) - 1) * 25%);
+    transition: 0.5s;
+    transition-delay: calc((var(--n) - 1) * 0.1s);
+    z-index: -1;
+}
+
+nav ul li{
+    color: var(--white);
+    text-decoration: none;
+}
+
+nav ul li:hover {
+    color: var(--prpl);
+}
+
+nav ul li:hover span {
+    transform: translateY(0) scale(2);
+}
+
+nav ul li span:nth-child(1) {
+    --n: 1;
+}
+
+nav ul li span:nth-child(2) {
+    --n: 2;
+}
+
+nav ul li span:nth-child(3) {
+    --n: 3;
+}
+
+nav ul li span:nth-child(4) {
+    --n: 4;
+}
+
+span {
+    display:block;
+    word-wrap:break-word;
+}
+
+#loading {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: #000;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+#spinner {
+    animation: rotate 0.7s infinite linear;
+    width:60px;
+    height:60px;
+    border:6px solid #ffc6ff;;
+    border-bottom:6px solid #000;
+    border-radius:50%;
+    margin:0;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#ctr {
+    width:100%;
+    color:white;
+    position:relative;
+    justify-content:center;
+    transition:1.4s ease-in-out;
+    padding-top:3vh;
+    padding-bottom:3vh;
+}
+
+#footer {
+    margin-bottom:5vh;
+    display:block;
+    text-align:center;
+    font-weight:bold;
+}
+#footer a {
+    color:  var(--pink);
+    background-clip:text;
+    font-family: var(--font);
+    text-decoration:none;
+}
+
+#avatar {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 35px auto 20px;
+    border-radius: 50%;
+    border: solid var(--purple) 3px;
+}
+
+#links {
+    max-width: 1000px;
+    width: auto;
+    display: block;
+    margin: 30px auto;
+    padding-top: 20px;
+}
+
+#social-icons {
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#social-icons a {
+    color: var(--purple);
+    text-decoration: none;
+    font-size:34px;
+    padding:12px 17px;
+    background:transparent;
+    font-weight:bold;
+    margin:0px 4px;
+    transition:0.2s ease-in-out;
+}
+
+#udesc {
+    display:block;
+    color: var(--white);
+    font-family: var(--font);
+    font-size: 15px;
+    text-align: center;
+}
+
+#user {
+    height: 90px;
+}
+
+#uname {
+    width: 100%;
+    color: var(--white);
+    font-family: var(--font);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+/* Sibling fade */
+.sibling-fade { visibility: hidden; }
+.sibling-fade > * { visibility: visible; }
+.sibling-fade > * { transition: opacity 150ms linear 100ms, transform 150ms ease-in-out 100ms; }
+.sibling-fade:hover > * { opacity: 0.4; transform: scale(0.9); }
+.sibling-fade > *:hover { opacity: 1; transform: scale(1); transition-delay: 0ms, 0ms; }

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>yaylib</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/718a1af9dc.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+    <div id="loading">
+        <div id="spinner"></div>
+    </div>
+    <div class="animated zoomIn" style="animation-delay:1.3s;">
+    <div id="ctr">
+        <img id="avatar" src="https://avatars.githubusercontent.com/u/22806461?v=4" alt="Avatar">
+        <div id="user">
+            <a href="#" id="uname">Moezee</a>
+            <span id="udesc">"Use Linux!"</span>
+        </div>
+    <section>
+            <div id="social-icons" class="sibling-fade">
+                <a href="https://github.com/laymoth" class="fa-brands fa-github" alt="GitHub" target="_blank"></a>
+                <a href="https://twitter.com/chctlay" class="fa-brands fa-twitter" alt="Twitter" target="_blank"></a>
+                <a href="https://instagram.com/chctlay" class="fa-brands fa-instagram" alt="Instagram" target="_blank"></a>
+                <a href="https://www.patreon.com/laymoth" class="fa-brands fa-patreon" alt="Patreon" target="_blank"></a>
+            </div>
+            <div id="links">
+                <nav>
+                    <ul>
+                      <li onclick="location.href='https://gitlab.com/archlinuxmoe';">
+                        Moezee
+                        <span></span><span></span><span></span><span></span>
+                      </li>
+                      <li onclick="location.href='#';">
+                        Blog (Soon)
+                        <span></span><span></span><span></span><span></span>
+                      </li>
+                      <li onclick="location.href='https://laymoth.github.io/yaylib/';">
+                        yaylib
+                        <span></span><span></span><span></span><span></span>
+                      </li>
+                      <li onclick="location.href='https://laymoth.github.io/knvrs';">
+                        Knvrs
+                        <span></span><span></span><span></span><span></span>
+                      </li>
+                      <li onclick="location.href='https://github.com/ConquerOS';">
+                        conquerOS
+                        <span></span><span></span><span></span><span></span>
+                      </li>
+                    </ul>
+                  </nav>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+    <div id="footer">
+        <p>&copy 2022 - The end of The World <a href="https://github.com/laymoth">Laymoth</a></p>
+    </div>
+<script>
+  // JS Animation | thanks @imfunniee
+    $(document).ready(function(){
+    $("a").on('click', function(event) {
+      if (this.hash !== "") {
+        event.preventDefault();
+        var hash = this.hash;
+        $('body,html').animate({
+        scrollTop: $(hash).offset().top
+        }, 1200, function(){
+        window.location.hash = hash;
+       });
+       } 
+      });
+  });
+  
+  var width = $(window).width(); 
+  
+  window.onscroll = function(){
+  if ((width >= 900)){
+      if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+          $("#ctr").css("background-size","150% auto");
+      }else{
+          $("#ctr").css("background-size","100% auto");        
+      }
+  }
+  };
+  
+  setTimeout(function(){
+      $("#loading").addClass("animated fadeOut");
+      setTimeout(function(){
+        $("#loading").removeClass("animated fadeOut");
+        $("#loading").css("display","none");
+      },800);
+  },1450);
+</script>
+</body>
+</html>
